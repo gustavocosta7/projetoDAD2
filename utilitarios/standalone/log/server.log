@@ -1,0 +1,525 @@
+12:32:36,684 INFO  [org.jboss.as.configadmin] (ServerService Thread Pool -- 26) JBAS016200: Activating ConfigAdmin Subsystem
+12:32:36,707 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 31) JBAS010280: Activating Infinispan subsystem.
+12:32:36,740 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 38) JBAS011800: Activating Naming Subsystem
+12:32:36,740 INFO  [org.jboss.as.naming] (MSC service thread 1-1) JBAS011802: Starting Naming Service
+12:32:36,740 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 44) JBAS013101: Activating Security Subsystem
+12:32:36,752 INFO  [org.jboss.as.security] (MSC service thread 1-1) JBAS013100: Current PicketBox version=4.0.7.Final
+12:32:36,853 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 48) JBAS015537: Activating WebServices Extension
+12:32:36,886 INFO  [org.jboss.as.osgi] (ServerService Thread Pool -- 39) JBAS011940: Activating OSGi Subsystem
+12:32:36,886 INFO  [org.jboss.as.connector] (MSC service thread 1-1) JBAS010408: Starting JCA Subsystem (JBoss IronJacamar 1.0.9.Final)
+12:32:36,909 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) JBAS015400: Bound mail session [java:jboss/mail/Default]
+12:32:36,931 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 27) JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+12:32:36,954 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 27) JBAS010404: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+12:32:37,021 INFO  [org.apache.coyote.http11.Http11Protocol] (MSC service thread 1-4) Starting Coyote HTTP/1.1 on http--127.0.0.1-8080
+12:32:37,223 INFO  [org.jboss.ws.common.management.AbstractServerConfig] (MSC service thread 1-4) JBoss Web Services - Stack CXF Server 4.0.2.GA
+12:32:37,503 INFO  [org.jboss.as.remoting] (MSC service thread 1-4) JBAS017100: Listening on /127.0.0.1:9999
+12:32:37,559 INFO  [org.jboss.as.remoting] (MSC service thread 1-4) JBAS017100: Listening on /127.0.0.1:4447
+12:32:37,559 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-2) JBAS015012: Started FileSystemDeploymentService for directory C:\Users\Suporte\Downloads\jboss-as-7.1.1.Final\jboss-as-7.1.1.Final\standalone\deployments
+12:32:37,593 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+12:32:37,593 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) JBAS010400: Bound data source [java:/jdbc/ifam]
+12:32:37,851 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:9990
+12:32:37,851 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: JBoss AS 7.1.1.Final "Brontes" started in 2302ms - Started 137 of 213 services (74 services are passive or on-demand)
+12:39:03,763 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "statefull.jar"
+12:39:03,967 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) JBAS016002: Processing weld deployment statefull.jar
+12:39:03,967 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-1) JNDI bindings for session bean named CarrinhoService in deployment unit deployment "statefull.jar" are as follows:
+
+	java:global/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:app/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:module/CarrinhoService!modelo.ICarrinhoService
+	java:jboss/exported/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:global/statefull/CarrinhoService
+	java:app/statefull/CarrinhoService
+	java:module/CarrinhoService
+
+12:39:04,045 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-1) MSC00001: Failed to start service jboss.deployment.unit."statefull.jar".INSTALL: org.jboss.msc.service.StartException in service jboss.deployment.unit."statefull.jar".INSTALL: Failed to process phase INSTALL of deployment "statefull.jar"
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:119) [jboss-as-server-7.1.1.Final.jar:7.1.1.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1811) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1746) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_80]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_80]
+	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_80]
+Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: JBAS011047: Component class ejb.CarrinhoService for component CarrinhoService has errors: 
+JBAS011440: Can't find a persistence unit named null in deployment "statefull.jar"
+	at org.jboss.as.ee.component.deployers.ModuleJndiBindingProcessor$1.handle(ModuleJndiBindingProcessor.java:169)
+	at org.jboss.as.ee.component.ClassDescriptionTraversal.run(ClassDescriptionTraversal.java:54)
+	at org.jboss.as.ee.component.deployers.ModuleJndiBindingProcessor.processClassConfigurations(ModuleJndiBindingProcessor.java:162)
+	at org.jboss.as.ee.component.deployers.ModuleJndiBindingProcessor.deploy(ModuleJndiBindingProcessor.java:155)
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:113) [jboss-as-server-7.1.1.Final.jar:7.1.1.Final]
+	... 5 more
+
+12:39:04,295 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS015870: Deploy of deployment "statefull.jar" was rolled back with failure message {"JBAS014671: Failed services" => {"jboss.deployment.unit.\"statefull.jar\".INSTALL" => "org.jboss.msc.service.StartException in service jboss.deployment.unit.\"statefull.jar\".INSTALL: Failed to process phase INSTALL of deployment \"statefull.jar\""},"JBAS014771: Services with missing/unavailable dependencies" => ["jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.Validatorjboss.naming.context.java.comp.statefull.statefull.CarrinhoServiceMissing[jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.Validatorjboss.naming.context.java.comp.statefull.statefull.CarrinhoService]","jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.ValidatorFactoryjboss.naming.context.java.comp.statefull.statefull.CarrinhoServiceMissing[jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.ValidatorFactoryjboss.naming.context.java.comp.statefull.statefull.CarrinhoService]"]}
+12:39:04,295 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) JBAS015877: Stopped deployment statefull.jar in 7ms
+12:39:04,295 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 1) JBAS014774: Service status report
+JBAS014775:    New missing/unsatisfied dependencies:
+      service jboss.naming.context.java.comp.statefull.statefull.CarrinhoService (missing) dependents: [service jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.ValidatorFactory, service jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.Validator] 
+JBAS014777:   Services which failed to start:      service jboss.deployment.unit."statefull.jar".INSTALL: org.jboss.msc.service.StartException in service jboss.deployment.unit."statefull.jar".INSTALL: Failed to process phase INSTALL of deployment "statefull.jar"
+
+12:39:04,295 ERROR [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 2) {"JBAS014653: Composite operation failed and was rolled back. Steps that failed:" => {"Operation step-2" => {"JBAS014671: Failed services" => {"jboss.deployment.unit.\"statefull.jar\".INSTALL" => "org.jboss.msc.service.StartException in service jboss.deployment.unit.\"statefull.jar\".INSTALL: Failed to process phase INSTALL of deployment \"statefull.jar\""},"JBAS014771: Services with missing/unavailable dependencies" => ["jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.Validatorjboss.naming.context.java.comp.statefull.statefull.CarrinhoServiceMissing[jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.Validatorjboss.naming.context.java.comp.statefull.statefull.CarrinhoService]","jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.ValidatorFactoryjboss.naming.context.java.comp.statefull.statefull.CarrinhoServiceMissing[jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.ValidatorFactoryjboss.naming.context.java.comp.statefull.statefull.CarrinhoService]"]}}}
+12:39:44,529 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) JBAS015876: Starting deployment of "statefull.jar"
+12:39:44,576 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) JBAS016002: Processing weld deployment statefull.jar
+12:39:44,576 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-1) JNDI bindings for session bean named CarrinhoService in deployment unit deployment "statefull.jar" are as follows:
+
+	java:global/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:app/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:module/CarrinhoService!modelo.ICarrinhoService
+	java:jboss/exported/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:global/statefull/CarrinhoService
+	java:app/statefull/CarrinhoService
+	java:module/CarrinhoService
+
+12:39:44,592 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-1) MSC00001: Failed to start service jboss.deployment.unit."statefull.jar".INSTALL: org.jboss.msc.service.StartException in service jboss.deployment.unit."statefull.jar".INSTALL: Failed to process phase INSTALL of deployment "statefull.jar"
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:119) [jboss-as-server-7.1.1.Final.jar:7.1.1.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1811) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1746) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_80]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_80]
+	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_80]
+Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: JBAS011047: Component class ejb.CarrinhoService for component CarrinhoService has errors: 
+JBAS011440: Can't find a persistence unit named null in deployment "statefull.jar"
+	at org.jboss.as.ee.component.deployers.ModuleJndiBindingProcessor$1.handle(ModuleJndiBindingProcessor.java:169)
+	at org.jboss.as.ee.component.ClassDescriptionTraversal.run(ClassDescriptionTraversal.java:54)
+	at org.jboss.as.ee.component.deployers.ModuleJndiBindingProcessor.processClassConfigurations(ModuleJndiBindingProcessor.java:162)
+	at org.jboss.as.ee.component.deployers.ModuleJndiBindingProcessor.deploy(ModuleJndiBindingProcessor.java:155)
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:113) [jboss-as-server-7.1.1.Final.jar:7.1.1.Final]
+	... 5 more
+
+12:39:44,826 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS015870: Deploy of deployment "statefull.jar" was rolled back with failure message {"JBAS014671: Failed services" => {"jboss.deployment.unit.\"statefull.jar\".INSTALL" => "org.jboss.msc.service.StartException in service jboss.deployment.unit.\"statefull.jar\".INSTALL: Failed to process phase INSTALL of deployment \"statefull.jar\""},"JBAS014771: Services with missing/unavailable dependencies" => ["jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.ValidatorFactoryjboss.naming.context.java.comp.statefull.statefull.CarrinhoServiceMissing[jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.ValidatorFactoryjboss.naming.context.java.comp.statefull.statefull.CarrinhoService]","jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.Validatorjboss.naming.context.java.comp.statefull.statefull.CarrinhoServiceMissing[jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.Validatorjboss.naming.context.java.comp.statefull.statefull.CarrinhoService]"]}
+12:39:44,826 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.deployment.unit."statefull.jar".INSTALL: org.jboss.msc.service.StartException in service jboss.deployment.unit."statefull.jar".INSTALL: Failed to process phase INSTALL of deployment "statefull.jar"
+
+12:39:44,873 ERROR [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) {"JBAS014653: Composite operation failed and was rolled back. Steps that failed:" => {"Operation step-2" => {"JBAS014671: Failed services" => {"jboss.deployment.unit.\"statefull.jar\".INSTALL" => "org.jboss.msc.service.StartException in service jboss.deployment.unit.\"statefull.jar\".INSTALL: Failed to process phase INSTALL of deployment \"statefull.jar\""},"JBAS014771: Services with missing/unavailable dependencies" => ["jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.ValidatorFactoryjboss.naming.context.java.comp.statefull.statefull.CarrinhoServiceMissing[jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.ValidatorFactoryjboss.naming.context.java.comp.statefull.statefull.CarrinhoService]","jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.Validatorjboss.naming.context.java.comp.statefull.statefull.CarrinhoServiceMissing[jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.Validatorjboss.naming.context.java.comp.statefull.statefull.CarrinhoService]"]}}}
+12:39:44,904 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment statefull.jar in 72ms
+12:39:44,904 INFO  [org.jboss.as.controller] (MSC service thread 1-1) JBAS014774: Service status report
+JBAS014776:    Newly corrected services:
+      service jboss.naming.context.java.comp.statefull.statefull.CarrinhoService (new available)
+
+12:40:14,440 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "statefull.jar"
+12:40:14,474 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) JBAS016002: Processing weld deployment statefull.jar
+12:40:14,474 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-1) JNDI bindings for session bean named CarrinhoService in deployment unit deployment "statefull.jar" are as follows:
+
+	java:global/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:app/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:module/CarrinhoService!modelo.ICarrinhoService
+	java:jboss/exported/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:global/statefull/CarrinhoService
+	java:app/statefull/CarrinhoService
+	java:module/CarrinhoService
+
+12:40:14,474 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-1) MSC00001: Failed to start service jboss.deployment.unit."statefull.jar".INSTALL: org.jboss.msc.service.StartException in service jboss.deployment.unit."statefull.jar".INSTALL: Failed to process phase INSTALL of deployment "statefull.jar"
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:119) [jboss-as-server-7.1.1.Final.jar:7.1.1.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1811) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1746) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_80]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_80]
+	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_80]
+Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: JBAS011047: Component class ejb.CarrinhoService for component CarrinhoService has errors: 
+JBAS011440: Can't find a persistence unit named null in deployment "statefull.jar"
+	at org.jboss.as.ee.component.deployers.ModuleJndiBindingProcessor$1.handle(ModuleJndiBindingProcessor.java:169)
+	at org.jboss.as.ee.component.ClassDescriptionTraversal.run(ClassDescriptionTraversal.java:54)
+	at org.jboss.as.ee.component.deployers.ModuleJndiBindingProcessor.processClassConfigurations(ModuleJndiBindingProcessor.java:162)
+	at org.jboss.as.ee.component.deployers.ModuleJndiBindingProcessor.deploy(ModuleJndiBindingProcessor.java:155)
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:113) [jboss-as-server-7.1.1.Final.jar:7.1.1.Final]
+	... 5 more
+
+12:40:14,729 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment statefull.jar in 2ms
+12:40:14,729 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS015870: Deploy of deployment "statefull.jar" was rolled back with failure message {"JBAS014671: Failed services" => {"jboss.deployment.unit.\"statefull.jar\".INSTALL" => "org.jboss.msc.service.StartException in service jboss.deployment.unit.\"statefull.jar\".INSTALL: Failed to process phase INSTALL of deployment \"statefull.jar\""},"JBAS014771: Services with missing/unavailable dependencies" => ["jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.ValidatorFactoryjboss.naming.context.java.comp.statefull.statefull.CarrinhoServiceMissing[jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.ValidatorFactoryjboss.naming.context.java.comp.statefull.statefull.CarrinhoService]","jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.Validatorjboss.naming.context.java.comp.statefull.statefull.CarrinhoServiceMissing[jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.Validatorjboss.naming.context.java.comp.statefull.statefull.CarrinhoService]"]}
+12:40:14,729 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) JBAS014774: Service status report
+JBAS014775:    New missing/unsatisfied dependencies:
+      service jboss.naming.context.java.comp.statefull.statefull.CarrinhoService (missing) dependents: [service jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.ValidatorFactory, service jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.Validator] 
+JBAS014777:   Services which failed to start:      service jboss.deployment.unit."statefull.jar".INSTALL: org.jboss.msc.service.StartException in service jboss.deployment.unit."statefull.jar".INSTALL: Failed to process phase INSTALL of deployment "statefull.jar"
+
+12:40:14,763 ERROR [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) {"JBAS014653: Composite operation failed and was rolled back. Steps that failed:" => {"Operation step-2" => {"JBAS014671: Failed services" => {"jboss.deployment.unit.\"statefull.jar\".INSTALL" => "org.jboss.msc.service.StartException in service jboss.deployment.unit.\"statefull.jar\".INSTALL: Failed to process phase INSTALL of deployment \"statefull.jar\""},"JBAS014771: Services with missing/unavailable dependencies" => ["jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.ValidatorFactoryjboss.naming.context.java.comp.statefull.statefull.CarrinhoServiceMissing[jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.ValidatorFactoryjboss.naming.context.java.comp.statefull.statefull.CarrinhoService]","jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.Validatorjboss.naming.context.java.comp.statefull.statefull.CarrinhoServiceMissing[jboss.naming.context.java.comp.statefull.statefull.CarrinhoService.Validatorjboss.naming.context.java.comp.statefull.statefull.CarrinhoService]"]}}}
+12:42:35,717 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) JBAS015876: Starting deployment of "statefull.jar"
+12:42:35,748 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) JBAS011401: Read persistence.xml for statefullPU
+12:42:35,763 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) JBAS016002: Processing weld deployment statefull.jar
+12:42:35,763 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named CarrinhoService in deployment unit deployment "statefull.jar" are as follows:
+
+	java:global/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:app/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:module/CarrinhoService!modelo.ICarrinhoService
+	java:jboss/exported/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:global/statefull/CarrinhoService
+	java:app/statefull/CarrinhoService
+	java:module/CarrinhoService
+
+12:42:35,779 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) JBAS016005: Starting Services for CDI deployment: statefull.jar
+12:42:35,810 INFO  [org.jboss.weld.Version] (MSC service thread 1-4) WELD-000900 1.1.5 (AS71)
+12:42:35,826 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) JBAS011402: Starting Persistence Unit Service 'statefull.jar#statefullPU'
+12:42:35,904 INFO  [org.hibernate.annotations.common.Version] (MSC service thread 1-1) HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+12:42:35,904 INFO  [org.hibernate.Version] (MSC service thread 1-1) HHH000412: Hibernate Core {4.0.1.Final}
+12:42:35,904 INFO  [org.hibernate.cfg.Environment] (MSC service thread 1-1) HHH000206: hibernate.properties not found
+12:42:35,904 INFO  [org.hibernate.cfg.Environment] (MSC service thread 1-1) HHH000021: Bytecode provider name : javassist
+12:42:35,920 INFO  [org.hibernate.ejb.Ejb3Configuration] (MSC service thread 1-1) HHH000204: Processing PersistenceUnitInfo [
+	name: statefullPU
+	...]
+12:42:36,045 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-1) MSC00001: Failed to start service jboss.persistenceunit."statefull.jar#statefullPU": org.jboss.msc.service.StartException in service jboss.persistenceunit."statefull.jar#statefullPU": Failed to start service
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1767) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_80]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_80]
+	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_80]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: statefullPU] Unable to build EntityManagerFactory
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:914)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:889)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:73)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl.createContainerEntityManagerFactory(PersistenceUnitServiceImpl.java:162)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl.start(PersistenceUnitServiceImpl.java:85)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1811) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1746) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	... 3 more
+Caused by: org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: modelo.Compra.itens[modelo.Item]
+	at org.hibernate.cfg.annotations.CollectionBinder.bindManyToManySecondPass(CollectionBinder.java:1160)
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:691)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:626)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:66)
+	at org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1586)
+	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1359)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1724)
+	at org.hibernate.ejb.EntityManagerFactoryImpl.<init>(EntityManagerFactoryImpl.java:84)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:904)
+	... 9 more
+
+12:42:36,279 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS015870: Deploy of deployment "statefull.jar" was rolled back with failure message {"JBAS014671: Failed services" => {"jboss.persistenceunit.\"statefull.jar#statefullPU\"" => "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"statefull.jar#statefullPU\": Failed to start service"}}
+12:42:36,295 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) JBAS015877: Stopped deployment statefull.jar in 25ms
+12:42:36,295 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) JBAS014774: Service status report
+JBAS014776:    Newly corrected services:
+      service jboss.naming.context.java.comp.statefull.statefull.CarrinhoService (no longer required)
+JBAS014777:   Services which failed to start:      service jboss.persistenceunit."statefull.jar#statefullPU": org.jboss.msc.service.StartException in service jboss.persistenceunit."statefull.jar#statefullPU": Failed to start service
+
+12:42:36,310 ERROR [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) {"JBAS014653: Composite operation failed and was rolled back. Steps that failed:" => {"Operation step-2" => {"JBAS014671: Failed services" => {"jboss.persistenceunit.\"statefull.jar#statefullPU\"" => "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"statefull.jar#statefullPU\": Failed to start service"}}}}
+12:43:21,560 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) JBAS015876: Starting deployment of "statefull.jar"
+12:43:21,560 INFO  [org.jboss.as.jpa] (MSC service thread 1-3) JBAS011401: Read persistence.xml for statefullPU
+12:43:21,576 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) JBAS016002: Processing weld deployment statefull.jar
+12:43:21,576 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-3) JNDI bindings for session bean named CarrinhoService in deployment unit deployment "statefull.jar" are as follows:
+
+	java:global/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:app/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:module/CarrinhoService!modelo.ICarrinhoService
+	java:jboss/exported/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:global/statefull/CarrinhoService
+	java:app/statefull/CarrinhoService
+	java:module/CarrinhoService
+
+12:43:21,592 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) JBAS016005: Starting Services for CDI deployment: statefull.jar
+12:43:21,592 INFO  [org.jboss.as.jpa] (MSC service thread 1-3) JBAS011402: Starting Persistence Unit Service 'statefull.jar#statefullPU'
+12:43:21,592 INFO  [org.hibernate.ejb.Ejb3Configuration] (MSC service thread 1-3) HHH000204: Processing PersistenceUnitInfo [
+	name: statefullPU
+	...]
+12:43:21,607 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-3) MSC00001: Failed to start service jboss.persistenceunit."statefull.jar#statefullPU": org.jboss.msc.service.StartException in service jboss.persistenceunit."statefull.jar#statefullPU": Failed to start service
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1767) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_80]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_80]
+	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_80]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: statefullPU] Unable to build EntityManagerFactory
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:914)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:889)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:73)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl.createContainerEntityManagerFactory(PersistenceUnitServiceImpl.java:162)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl.start(PersistenceUnitServiceImpl.java:85)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1811) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1746) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	... 3 more
+Caused by: org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: modelo.Compra.itens[modelo.Item]
+	at org.hibernate.cfg.annotations.CollectionBinder.bindManyToManySecondPass(CollectionBinder.java:1160)
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:691)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:626)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:66)
+	at org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1586)
+	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1359)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1724)
+	at org.hibernate.ejb.EntityManagerFactoryImpl.<init>(EntityManagerFactoryImpl.java:84)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:904)
+	... 9 more
+
+12:43:21,842 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS015870: Deploy of deployment "statefull.jar" was rolled back with failure message {"JBAS014671: Failed services" => {"jboss.persistenceunit.\"statefull.jar#statefullPU\"" => "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"statefull.jar#statefullPU\": Failed to start service"}}
+12:43:21,857 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment statefull.jar in 17ms
+12:43:21,857 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.persistenceunit."statefull.jar#statefullPU": org.jboss.msc.service.StartException in service jboss.persistenceunit."statefull.jar#statefullPU": Failed to start service
+
+12:43:21,857 ERROR [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) {"JBAS014653: Composite operation failed and was rolled back. Steps that failed:" => {"Operation step-2" => {"JBAS014671: Failed services" => {"jboss.persistenceunit.\"statefull.jar#statefullPU\"" => "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"statefull.jar#statefullPU\": Failed to start service"}}}}
+12:43:56,969 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "statefull.jar"
+12:43:56,984 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) JBAS011401: Read persistence.xml for statefullPU
+12:43:56,984 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) JBAS016002: Processing weld deployment statefull.jar
+12:43:57,000 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-1) JNDI bindings for session bean named CarrinhoService in deployment unit deployment "statefull.jar" are as follows:
+
+	java:global/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:app/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:module/CarrinhoService!modelo.ICarrinhoService
+	java:jboss/exported/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:global/statefull/CarrinhoService
+	java:app/statefull/CarrinhoService
+	java:module/CarrinhoService
+
+12:43:57,000 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) JBAS016005: Starting Services for CDI deployment: statefull.jar
+12:43:57,015 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) JBAS011402: Starting Persistence Unit Service 'statefull.jar#statefullPU'
+12:43:57,015 INFO  [org.hibernate.ejb.Ejb3Configuration] (MSC service thread 1-1) HHH000204: Processing PersistenceUnitInfo [
+	name: statefullPU
+	...]
+12:43:57,031 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-1) MSC00001: Failed to start service jboss.persistenceunit."statefull.jar#statefullPU": org.jboss.msc.service.StartException in service jboss.persistenceunit."statefull.jar#statefullPU": Failed to start service
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1767) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_80]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_80]
+	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_80]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: statefullPU] Unable to build EntityManagerFactory
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:914)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:889)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:73)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl.createContainerEntityManagerFactory(PersistenceUnitServiceImpl.java:162)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl.start(PersistenceUnitServiceImpl.java:85)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1811) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1746) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	... 3 more
+Caused by: org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: modelo.Compra.itens[modelo.Item]
+	at org.hibernate.cfg.annotations.CollectionBinder.bindManyToManySecondPass(CollectionBinder.java:1160)
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:691)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:626)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:66)
+	at org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1586)
+	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1359)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1724)
+	at org.hibernate.ejb.EntityManagerFactoryImpl.<init>(EntityManagerFactoryImpl.java:84)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:904)
+	... 9 more
+
+12:43:57,250 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS015870: Deploy of deployment "statefull.jar" was rolled back with failure message {"JBAS014671: Failed services" => {"jboss.persistenceunit.\"statefull.jar#statefullPU\"" => "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"statefull.jar#statefullPU\": Failed to start service"}}
+12:43:57,250 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 1) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.persistenceunit."statefull.jar#statefullPU": org.jboss.msc.service.StartException in service jboss.persistenceunit."statefull.jar#statefullPU": Failed to start service
+
+12:43:57,250 ERROR [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 2) {"JBAS014653: Composite operation failed and was rolled back. Steps that failed:" => {"Operation step-2" => {"JBAS014671: Failed services" => {"jboss.persistenceunit.\"statefull.jar#statefullPU\"" => "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"statefull.jar#statefullPU\": Failed to start service"}}}}
+12:43:57,265 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment statefull.jar in 16ms
+12:47:50,986 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "statefull.jar"
+12:47:51,001 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) JBAS011401: Read persistence.xml for statefullPU
+12:47:51,001 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) JBAS016002: Processing weld deployment statefull.jar
+12:47:51,001 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-1) JNDI bindings for session bean named CarrinhoService in deployment unit deployment "statefull.jar" are as follows:
+
+	java:global/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:app/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:module/CarrinhoService!modelo.ICarrinhoService
+	java:jboss/exported/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:global/statefull/CarrinhoService
+	java:app/statefull/CarrinhoService
+	java:module/CarrinhoService
+
+12:47:51,016 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) JBAS016005: Starting Services for CDI deployment: statefull.jar
+12:47:51,016 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) JBAS011402: Starting Persistence Unit Service 'statefull.jar#statefullPU'
+12:47:51,016 INFO  [org.hibernate.ejb.Ejb3Configuration] (MSC service thread 1-1) HHH000204: Processing PersistenceUnitInfo [
+	name: statefullPU
+	...]
+12:47:51,030 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-1) MSC00001: Failed to start service jboss.persistenceunit."statefull.jar#statefullPU": org.jboss.msc.service.StartException in service jboss.persistenceunit."statefull.jar#statefullPU": Failed to start service
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1767) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_80]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_80]
+	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_80]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: statefullPU] Unable to build EntityManagerFactory
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:914)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:889)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:73)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl.createContainerEntityManagerFactory(PersistenceUnitServiceImpl.java:162)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl.start(PersistenceUnitServiceImpl.java:85)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1811) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1746) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	... 3 more
+Caused by: org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: modelo.Compra.itens[modelo.Item]
+	at org.hibernate.cfg.annotations.CollectionBinder.bindManyToManySecondPass(CollectionBinder.java:1160)
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:691)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:626)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:66)
+	at org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1586)
+	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1359)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1724)
+	at org.hibernate.ejb.EntityManagerFactoryImpl.<init>(EntityManagerFactoryImpl.java:84)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:904)
+	... 9 more
+
+12:47:51,253 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS015870: Deploy of deployment "statefull.jar" was rolled back with failure message {"JBAS014671: Failed services" => {"jboss.persistenceunit.\"statefull.jar#statefullPU\"" => "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"statefull.jar#statefullPU\": Failed to start service"}}
+12:47:51,253 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 1) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.persistenceunit."statefull.jar#statefullPU": org.jboss.msc.service.StartException in service jboss.persistenceunit."statefull.jar#statefullPU": Failed to start service
+
+12:47:51,253 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment statefull.jar in 11ms
+12:47:51,268 ERROR [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 2) {"JBAS014653: Composite operation failed and was rolled back. Steps that failed:" => {"Operation step-2" => {"JBAS014671: Failed services" => {"jboss.persistenceunit.\"statefull.jar#statefullPU\"" => "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"statefull.jar#statefullPU\": Failed to start service"}}}}
+12:48:56,695 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "statefull.jar"
+12:48:56,695 INFO  [org.jboss.as.jpa] (MSC service thread 1-2) JBAS011401: Read persistence.xml for statefullPU
+12:48:56,711 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) JBAS016002: Processing weld deployment statefull.jar
+12:48:56,711 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-2) JNDI bindings for session bean named CarrinhoService in deployment unit deployment "statefull.jar" are as follows:
+
+	java:global/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:app/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:module/CarrinhoService!modelo.ICarrinhoService
+	java:jboss/exported/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:global/statefull/CarrinhoService
+	java:app/statefull/CarrinhoService
+	java:module/CarrinhoService
+
+12:48:56,711 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) JBAS016005: Starting Services for CDI deployment: statefull.jar
+12:48:56,711 INFO  [org.jboss.as.jpa] (MSC service thread 1-2) JBAS011402: Starting Persistence Unit Service 'statefull.jar#statefullPU'
+12:48:56,711 INFO  [org.hibernate.ejb.Ejb3Configuration] (MSC service thread 1-2) HHH000204: Processing PersistenceUnitInfo [
+	name: statefullPU
+	...]
+12:48:56,743 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-2) MSC00001: Failed to start service jboss.persistenceunit."statefull.jar#statefullPU": org.jboss.msc.service.StartException in service jboss.persistenceunit."statefull.jar#statefullPU": Failed to start service
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1767) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_80]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_80]
+	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_80]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: statefullPU] Unable to build EntityManagerFactory
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:914)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:889)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:73)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl.createContainerEntityManagerFactory(PersistenceUnitServiceImpl.java:162)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl.start(PersistenceUnitServiceImpl.java:85)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1811) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1746) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	... 3 more
+Caused by: org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: modelo.Compra.itens[modelo.Item]
+	at org.hibernate.cfg.annotations.CollectionBinder.bindManyToManySecondPass(CollectionBinder.java:1160)
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:691)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:626)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:66)
+	at org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1586)
+	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1359)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1724)
+	at org.hibernate.ejb.EntityManagerFactoryImpl.<init>(EntityManagerFactoryImpl.java:84)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:904)
+	... 9 more
+
+12:48:56,981 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS015870: Deploy of deployment "statefull.jar" was rolled back with failure message {"JBAS014671: Failed services" => {"jboss.persistenceunit.\"statefull.jar#statefullPU\"" => "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"statefull.jar#statefullPU\": Failed to start service"}}
+12:48:56,997 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment statefull.jar in 14ms
+12:48:56,997 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.persistenceunit."statefull.jar#statefullPU": org.jboss.msc.service.StartException in service jboss.persistenceunit."statefull.jar#statefullPU": Failed to start service
+
+12:48:56,997 ERROR [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) {"JBAS014653: Composite operation failed and was rolled back. Steps that failed:" => {"Operation step-2" => {"JBAS014671: Failed services" => {"jboss.persistenceunit.\"statefull.jar#statefullPU\"" => "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"statefull.jar#statefullPU\": Failed to start service"}}}}
+12:49:40,275 INFO  [org.jboss.as.osgi] (MSC service thread 1-2) JBAS011942: Stopping OSGi Framework
+12:50:08,076 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 44) JBAS013101: Activating Security Subsystem
+12:50:08,076 INFO  [org.jboss.as.security] (MSC service thread 1-4) JBAS013100: Current PicketBox version=4.0.7.Final
+12:50:08,076 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 48) JBAS015537: Activating WebServices Extension
+12:50:08,076 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 31) JBAS010280: Activating Infinispan subsystem.
+12:50:08,117 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 38) JBAS011800: Activating Naming Subsystem
+12:50:08,186 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 27) JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+12:50:08,186 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 27) JBAS010404: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+12:50:08,214 INFO  [org.jboss.as.osgi] (ServerService Thread Pool -- 39) JBAS011940: Activating OSGi Subsystem
+12:50:08,241 INFO  [org.jboss.as.connector] (MSC service thread 1-1) JBAS010408: Starting JCA Subsystem (JBoss IronJacamar 1.0.9.Final)
+12:50:08,241 INFO  [org.jboss.as.naming] (MSC service thread 1-1) JBAS011802: Starting Naming Service
+12:50:08,365 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) JBAS015400: Bound mail session [java:jboss/mail/Default]
+12:50:08,365 INFO  [org.jboss.ws.common.management.AbstractServerConfig] (MSC service thread 1-4) JBoss Web Services - Stack CXF Server 4.0.2.GA
+12:50:08,655 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-4) JBAS015012: Started FileSystemDeploymentService for directory C:\Users\Suporte\Downloads\jboss-as-7.1.1.Final\jboss-as-7.1.1.Final\standalone\deployments
+12:50:08,655 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015014: Re-attempting failed deployment statefull.jar
+12:50:08,817 INFO  [org.apache.coyote.http11.Http11Protocol] (MSC service thread 1-3) Starting Coyote HTTP/1.1 on http--127.0.0.1-8080
+12:50:08,830 INFO  [org.jboss.as.remoting] (MSC service thread 1-3) JBAS017100: Listening on /127.0.0.1:4447
+12:50:08,844 INFO  [org.jboss.as.remoting] (MSC service thread 1-4) JBAS017100: Listening on /127.0.0.1:9999
+12:50:08,945 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+12:50:08,945 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) JBAS010400: Bound data source [java:/jdbc/ifam]
+12:50:08,986 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "statefull.jar"
+12:50:09,124 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) JBAS011401: Read persistence.xml for statefullPU
+12:50:09,152 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) JBAS016002: Processing weld deployment statefull.jar
+12:50:09,152 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-1) JNDI bindings for session bean named CarrinhoService in deployment unit deployment "statefull.jar" are as follows:
+
+	java:global/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:app/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:module/CarrinhoService!modelo.ICarrinhoService
+	java:jboss/exported/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:global/statefull/CarrinhoService
+	java:app/statefull/CarrinhoService
+	java:module/CarrinhoService
+
+12:50:09,262 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) JBAS016005: Starting Services for CDI deployment: statefull.jar
+12:50:09,276 INFO  [org.jboss.weld.Version] (MSC service thread 1-1) WELD-000900 1.1.5 (AS71)
+12:50:09,303 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) JBAS011402: Starting Persistence Unit Service 'statefull.jar#statefullPU'
+12:50:09,386 INFO  [org.hibernate.annotations.common.Version] (MSC service thread 1-1) HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+12:50:09,386 INFO  [org.hibernate.Version] (MSC service thread 1-1) HHH000412: Hibernate Core {4.0.1.Final}
+12:50:09,386 INFO  [org.hibernate.cfg.Environment] (MSC service thread 1-1) HHH000206: hibernate.properties not found
+12:50:09,386 INFO  [org.hibernate.cfg.Environment] (MSC service thread 1-1) HHH000021: Bytecode provider name : javassist
+12:50:09,400 INFO  [org.hibernate.ejb.Ejb3Configuration] (MSC service thread 1-1) HHH000204: Processing PersistenceUnitInfo [
+	name: statefullPU
+	...]
+12:50:09,482 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-1) MSC00001: Failed to start service jboss.persistenceunit."statefull.jar#statefullPU": org.jboss.msc.service.StartException in service jboss.persistenceunit."statefull.jar#statefullPU": Failed to start service
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1767) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_80]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_80]
+	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_80]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: statefullPU] Unable to build EntityManagerFactory
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:914)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:889)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:73)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl.createContainerEntityManagerFactory(PersistenceUnitServiceImpl.java:162)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl.start(PersistenceUnitServiceImpl.java:85)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1811) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1746) [jboss-msc-1.0.2.GA.jar:1.0.2.GA]
+	... 3 more
+Caused by: org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: modelo.Compra.itens[modelo.Item]
+	at org.hibernate.cfg.annotations.CollectionBinder.bindManyToManySecondPass(CollectionBinder.java:1160)
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:691)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:626)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:66)
+	at org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1586)
+	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1359)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1724)
+	at org.hibernate.ejb.EntityManagerFactoryImpl.<init>(EntityManagerFactoryImpl.java:84)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:904)
+	... 9 more
+
+12:50:09,510 INFO  [org.jboss.as] (MSC service thread 1-1) JBAS015951: Admin console listening on http://127.0.0.1:9990
+12:50:09,510 ERROR [org.jboss.as] (MSC service thread 1-1) JBAS015875: JBoss AS 7.1.1.Final "Brontes" started (with errors) in 2566ms - Started 174 of 260 services (8 services failed or missing dependencies, 76 services are passive or on-demand)
+12:50:09,717 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS015870: Deploy of deployment "statefull.jar" was rolled back with failure message {"JBAS014671: Failed services" => {"jboss.persistenceunit.\"statefull.jar#statefullPU\"" => "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"statefull.jar#statefullPU\": Failed to start service"}}
+12:50:09,717 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.persistenceunit."statefull.jar#statefullPU": org.jboss.msc.service.StartException in service jboss.persistenceunit."statefull.jar#statefullPU": Failed to start service
+
+12:50:09,717 ERROR [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) {"JBAS014653: Composite operation failed and was rolled back. Steps that failed:" => {"Operation step-2" => {"JBAS014671: Failed services" => {"jboss.persistenceunit.\"statefull.jar#statefullPU\"" => "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"statefull.jar#statefullPU\": Failed to start service"}}}}
+12:50:09,731 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) JBAS015877: Stopped deployment statefull.jar in 17ms
+12:52:35,233 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) JBAS015876: Starting deployment of "statefull.jar"
+12:52:35,247 INFO  [org.jboss.as.jpa] (MSC service thread 1-4) JBAS011401: Read persistence.xml for statefullPU
+12:52:35,261 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) JBAS016002: Processing weld deployment statefull.jar
+12:52:35,261 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named CarrinhoService in deployment unit deployment "statefull.jar" are as follows:
+
+	java:global/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:app/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:module/CarrinhoService!modelo.ICarrinhoService
+	java:jboss/exported/statefull/CarrinhoService!modelo.ICarrinhoService
+	java:global/statefull/CarrinhoService
+	java:app/statefull/CarrinhoService
+	java:module/CarrinhoService
+
+12:52:35,275 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) JBAS016005: Starting Services for CDI deployment: statefull.jar
+12:52:35,289 INFO  [org.jboss.as.jpa] (MSC service thread 1-2) JBAS011402: Starting Persistence Unit Service 'statefull.jar#statefullPU'
+12:52:35,289 INFO  [org.hibernate.ejb.Ejb3Configuration] (MSC service thread 1-2) HHH000204: Processing PersistenceUnitInfo [
+	name: statefullPU
+	...]
+12:52:35,317 INFO  [org.hibernate.service.jdbc.connections.internal.ConnectionProviderInitiator] (MSC service thread 1-2) HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+12:52:35,514 INFO  [org.hibernate.dialect.Dialect] (MSC service thread 1-2) HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+12:52:35,514 INFO  [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] (MSC service thread 1-2) HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+12:52:35,514 INFO  [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] (MSC service thread 1-2) HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jta.CMTTransactionFactory
+12:52:35,514 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] (MSC service thread 1-2) HHH000397: Using ASTQueryTranslatorFactory
+12:52:35,542 INFO  [org.hibernate.validator.util.Version] (MSC service thread 1-2) Hibernate Validator 4.2.0.Final
+12:52:35,729 INFO  [org.hibernate.tuple.PojoInstantiator] (MSC service thread 1-2) HHH000182: No default (no-argument) constructor for class: modelo.Item (class must be instantiated by Interceptor)
+12:52:35,758 INFO  [org.hibernate.tool.hbm2ddl.SchemaExport] (MSC service thread 1-2) HHH000227: Running hbm2ddl schema export
+12:52:35,758 INFO  [stdout] (MSC service thread 1-2) Hibernate: alter table Compra drop foreign key FK78A4219EFDD12CAE
+12:52:35,758 ERROR [org.hibernate.tool.hbm2ddl.SchemaExport] (MSC service thread 1-2) HHH000389: Unsuccessful: alter table Compra drop foreign key FK78A4219EFDD12CAE
+12:52:35,772 ERROR [org.hibernate.tool.hbm2ddl.SchemaExport] (MSC service thread 1-2) Table 'ifam.compra' doesn't exist
+12:52:35,772 INFO  [stdout] (MSC service thread 1-2) Hibernate: alter table Compra drop foreign key FK78A4219E313D43D2
+12:52:35,772 ERROR [org.hibernate.tool.hbm2ddl.SchemaExport] (MSC service thread 1-2) HHH000389: Unsuccessful: alter table Compra drop foreign key FK78A4219E313D43D2
+12:52:35,772 ERROR [org.hibernate.tool.hbm2ddl.SchemaExport] (MSC service thread 1-2) Table 'ifam.compra' doesn't exist
+12:52:35,772 INFO  [stdout] (MSC service thread 1-2) Hibernate: alter table Compra_Item drop foreign key FKB0C3D9348F4BD736
+12:52:35,772 ERROR [org.hibernate.tool.hbm2ddl.SchemaExport] (MSC service thread 1-2) HHH000389: Unsuccessful: alter table Compra_Item drop foreign key FKB0C3D9348F4BD736
+12:52:35,772 ERROR [org.hibernate.tool.hbm2ddl.SchemaExport] (MSC service thread 1-2) Table 'ifam.compra_item' doesn't exist
+12:52:35,772 INFO  [stdout] (MSC service thread 1-2) Hibernate: alter table Compra_Item drop foreign key FKB0C3D934AC5761A2
+12:52:35,772 ERROR [org.hibernate.tool.hbm2ddl.SchemaExport] (MSC service thread 1-2) HHH000389: Unsuccessful: alter table Compra_Item drop foreign key FKB0C3D934AC5761A2
+12:52:35,772 ERROR [org.hibernate.tool.hbm2ddl.SchemaExport] (MSC service thread 1-2) Table 'ifam.compra_item' doesn't exist
+12:52:35,772 INFO  [stdout] (MSC service thread 1-2) Hibernate: drop table if exists Categoria
+12:52:35,814 INFO  [stdout] (MSC service thread 1-2) Hibernate: drop table if exists Cliente
+12:52:35,814 INFO  [stdout] (MSC service thread 1-2) Hibernate: drop table if exists Compra
+12:52:35,828 INFO  [stdout] (MSC service thread 1-2) Hibernate: drop table if exists Compra_Item
+12:52:35,828 INFO  [stdout] (MSC service thread 1-2) Hibernate: drop table if exists FormaPagamento
+12:52:35,828 INFO  [stdout] (MSC service thread 1-2) Hibernate: drop table if exists Item
+12:52:35,828 INFO  [stdout] (MSC service thread 1-2) Hibernate: drop table if exists hibernate_sequence
+12:52:35,828 INFO  [stdout] (MSC service thread 1-2) Hibernate: create table Categoria (id bigint not null, descricao varchar(255), percentual double precision not null, primary key (id))
+12:52:35,954 INFO  [stdout] (MSC service thread 1-2) Hibernate: create table Cliente (id bigint not null, cpf varchar(255), nome varchar(255), primary key (id))
+12:52:35,968 INFO  [stdout] (MSC service thread 1-2) Hibernate: create table Compra (id bigint not null, desconto double precision not null, cliente_id bigint, forma_id bigint, primary key (id))
+12:52:35,983 INFO  [stdout] (MSC service thread 1-2) Hibernate: create table Compra_Item (Compra_id bigint not null, itens_id integer not null, unique (itens_id))
+12:52:35,997 INFO  [stdout] (MSC service thread 1-2) Hibernate: create table FormaPagamento (id bigint not null, descricao varchar(255), parcela bigint not null, primary key (id))
+12:52:36,011 INFO  [stdout] (MSC service thread 1-2) Hibernate: create table Item (id integer not null, produto tinyblob, quantidade integer not null, primary key (id))
+12:52:36,039 INFO  [stdout] (MSC service thread 1-2) Hibernate: alter table Compra add index FK78A4219EFDD12CAE (forma_id), add constraint FK78A4219EFDD12CAE foreign key (forma_id) references FormaPagamento (id)
+12:52:36,123 INFO  [stdout] (MSC service thread 1-2) Hibernate: alter table Compra add index FK78A4219E313D43D2 (cliente_id), add constraint FK78A4219E313D43D2 foreign key (cliente_id) references Cliente (id)
+12:52:36,348 INFO  [stdout] (MSC service thread 1-2) Hibernate: alter table Compra_Item add index FKB0C3D9348F4BD736 (itens_id), add constraint FKB0C3D9348F4BD736 foreign key (itens_id) references Item (id)
+12:52:36,390 INFO  [stdout] (MSC service thread 1-2) Hibernate: alter table Compra_Item add index FKB0C3D934AC5761A2 (Compra_id), add constraint FKB0C3D934AC5761A2 foreign key (Compra_id) references Compra (id)
+12:52:36,489 INFO  [stdout] (MSC service thread 1-2) Hibernate: create table hibernate_sequence ( next_val bigint )
+12:52:36,545 INFO  [stdout] (MSC service thread 1-2) Hibernate: insert into hibernate_sequence values ( 1 )
+12:52:36,545 INFO  [org.hibernate.tool.hbm2ddl.SchemaExport] (MSC service thread 1-2) HHH000230: Schema export complete
+12:52:36,562 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) JBAS016008: Starting weld service for deployment statefull.jar
+12:52:37,298 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018559: Deployed "statefull.jar"
