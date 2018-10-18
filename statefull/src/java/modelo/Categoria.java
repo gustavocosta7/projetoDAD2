@@ -8,6 +8,7 @@ package modelo;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+
 /**
  *
  * @author Suporte

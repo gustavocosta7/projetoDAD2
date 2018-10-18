@@ -6,17 +6,23 @@
 package modelo;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
  * @author Suporte
  */
+@Entity
 public class Produto implements Serializable{
     private static final long serialVersion = 1L;
+    @Id
     private int codigo;
     private String nome;
     private double valor;
 //MANY TO ONE 
+    @ManyToOne
     private Categoria categoria;
 
 
