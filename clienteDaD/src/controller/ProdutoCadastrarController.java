@@ -9,13 +9,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.swing.DefaultComboBoxModel;
 import modelo.Categoria;
 import modelo.IProdutoService;
+import modelo.Produto;
 import view.ProdutoCadastrarTela;
 
 /**
@@ -68,6 +67,20 @@ public class ProdutoCadastrarController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            double valor = Double.parseDouble(tela.getTfValor());
+            String nome = tela.getTfNome();
+            Categoria categoria = categorias.get(tela.getCbCategoria().getSelectedIndex());
+            
+            Produto produto = new Produto(nome, valor, categoria);
+            ps.inserir(produto);
+            
+            tela.showMensagemSucesso("Adicionado com sucesso!");
+            
+            tela.setTfNome("");
+            tela.setTfValor("");
+            
+            
+            
             
         }
 

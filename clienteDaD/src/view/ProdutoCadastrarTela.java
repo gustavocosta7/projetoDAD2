@@ -8,6 +8,7 @@ package view;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -175,23 +176,25 @@ public class ProdutoCadastrarTela extends javax.swing.JFrame {
         this.cbCategoria = cbCategoria;
     }
 
-    public JTextField getTfNome() {
-        return tfNome;
+    public String getTfNome() {
+        return tfNome.getText();
     }
 
-    public void setTfNome(JTextField tfNome) {
-        this.tfNome = tfNome;
+    public void setTfNome(String tfNome) {
+        this.tfNome.setText(tfNome);
     }
 
-    public JTextField getTfValor() {
-        return tfValor;
+    public String getTfValor() {
+        return tfValor.getText();
     }
 
-    public void setTfValor(JTextField tfValor) {
-        this.tfValor = tfValor;
+    public void setTfValor(String tfValor) {
+        this.tfValor.setText(tfValor);
     }
     
-    
+    public void showMensagemSucesso(String msg){
+        JOptionPane.showMessageDialog(null, msg,null,JOptionPane.INFORMATION_MESSAGE);
+    }
     
     /**
      * @param args the command line arguments

@@ -22,9 +22,7 @@ public class GenericDao <T> {
     
     public void save(T obj){
         try{
-            entityManager.getTransaction().begin();
             entityManager.persist(obj);
-            entityManager.getTransaction().commit();
         }catch(Exception e){
             entityManager.getTransaction().rollback();
         }
@@ -33,9 +31,7 @@ public class GenericDao <T> {
     
     public void update(T obj){
         try{
-            entityManager.getTransaction().begin();
             entityManager.merge(obj);
-            entityManager.getTransaction().commit();
         }catch(Exception e){
             entityManager.getTransaction().rollback();
         }
@@ -46,9 +42,7 @@ public class GenericDao <T> {
     public void remove(Class<T> obj, Long id){
         T t = findById(obj, id);
         try{
-            entityManager.getTransaction().begin();
             entityManager.remove(t);
-            entityManager.getTransaction().commit();
         }catch (Exception e) {
             entityManager.getTransaction().rollback();
         }

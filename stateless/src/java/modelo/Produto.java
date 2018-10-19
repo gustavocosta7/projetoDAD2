@@ -37,6 +37,13 @@ public class Produto implements Serializable{
         this.nome = nome;
         this.valor = valor;
     }
+    
+    
+    public Produto(String nome, double valor, Categoria categoria) {
+        this.nome = nome;
+        this.valor = valor;
+        this.categoria = categoria;
+    }
 
     public long getCodigo() {
         return codigo;
