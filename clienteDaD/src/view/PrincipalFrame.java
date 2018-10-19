@@ -5,7 +5,8 @@
  */
 package view;
 
-import controller.ProdutoCadastrarController;
+import controller.produto.ProdutoCadastrarController;
+import controller.produto.ProdutoPesquisarController;
 
 /**
  *
@@ -97,8 +98,8 @@ public class PrincipalFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnComprarActionPerformed
 
     private void btnProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutoActionPerformed
-        ProdutoCadastrarTela tela = new ProdutoCadastrarTela();
-        ProdutoCadastrarController pcc = new ProdutoCadastrarController(tela);
+        ProdutoPesquisarTela tela = new ProdutoPesquisarTela();
+        ProdutoPesquisarController pcc = new ProdutoPesquisarController(tela);
         tela.setVisible(true);
         tela.setLocationRelativeTo(null);
         

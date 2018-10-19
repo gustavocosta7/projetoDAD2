@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller;
+package controller.produto;
 
+import ejb.ConectaService;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.swing.DefaultComboBoxModel;
 import modelo.Categoria;
 import modelo.IProdutoService;
 import modelo.Produto;
 import view.ProdutoCadastrarTela;
+import view.ProdutoPesquisarTela;
 
 /**
  *
@@ -30,23 +30,10 @@ public class ProdutoCadastrarController {
 
     public ProdutoCadastrarController(ProdutoCadastrarTela tela) {
         this.tela = tela;
-        conectaService();
+        ps = ConectaService.conectaIProdutoService();
         carregaCombo();
         this.tela.addBtnSalvar(new CadastrarProduto());
-    }
-    /**
-     * Inicializa service
-     */
-    public void conectaService(){
-        
-        
-        try {
-             InitialContext context = new InitialContext();
-             ps = (IProdutoService) context.lookup("ejb:/stateless/ProdutoService!modelo.IProdutoService");
-        } catch (NamingException ex) {
-            System.out.println(ex.getLocalizedMessage());
-        }
-       
+        this.tela.addBtnVoltar(new Voltar());
     }
     /**
      * Carrega combobox categorias
@@ -59,6 +46,20 @@ public class ProdutoCadastrarController {
         }
         tela.getCbCategoria().setModel(model);
 
+    }
+
+    private class Voltar implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+                ProdutoPesquisarTela telaP = new ProdutoPesquisarTela();
+                ProdutoPesquisarController pcc = new ProdutoPesquisarController(telaP);
+                telaP.setVisible(true);
+                telaP.setLocationRelativeTo(null);
+
+                tela.dispose();
+        
+        }
     }
 /**
  * Cadastra objeto no banco
@@ -79,15 +80,9 @@ public class ProdutoCadastrarController {
             tela.setTfNome("");
             tela.setTfValor("");
             
-            
-            
-            
+                       
         }
-
+        
         
     }
-    
-    
-    
-    
 }

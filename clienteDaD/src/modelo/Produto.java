@@ -60,6 +60,14 @@ public class Produto implements Serializable{
     public void setValor(double valor) {
         this.valor = valor;
     }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
     
     
 }

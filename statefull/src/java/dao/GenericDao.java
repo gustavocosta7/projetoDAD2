@@ -12,6 +12,7 @@ package dao;
 
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 public class GenericDao <T> {
     
     private EntityManager entityManager;
@@ -22,9 +23,7 @@ public class GenericDao <T> {
     
     public void save(T obj){
         try{
-            entityManager.getTransaction().begin();
             entityManager.persist(obj);
-            entityManager.getTransaction().commit();
         }catch(Exception e){
             entityManager.getTransaction().rollback();
         }
@@ -33,9 +32,7 @@ public class GenericDao <T> {
     
     public void update(T obj){
         try{
-            entityManager.getTransaction().begin();
             entityManager.merge(obj);
-            entityManager.getTransaction().commit();
         }catch(Exception e){
             entityManager.getTransaction().rollback();
         }
@@ -46,9 +43,7 @@ public class GenericDao <T> {
     public void remove(Class<T> obj, Long id){
         T t = findById(obj, id);
         try{
-            entityManager.getTransaction().begin();
             entityManager.remove(t);
-            entityManager.getTransaction().commit();
         }catch (Exception e) {
             entityManager.getTransaction().rollback();
         }
@@ -63,6 +58,13 @@ public class GenericDao <T> {
     
     public List<T> findAll(Class<T> obj){
         return entityManager.createQuery("Select t from " + obj.getSimpleName() + " t").getResultList();
+    }
+    
+        
+    public List<T> findByNome(Class<T> obj, String procura, String coluna){
+        Query query = entityManager.createQuery("Select t from " + obj.getSimpleName() + " as t WHERE t."+coluna+" LIKE :param");
+        query.setParameter("param", "%"+procura+"%");
+        return query.getResultList();
     }
     
     

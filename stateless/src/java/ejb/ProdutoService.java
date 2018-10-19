@@ -46,6 +46,12 @@ public class ProdutoService implements IProdutoService{
     }
 
     @Override
+    public void alterar(Produto p) {
+        GenericDao<Produto> dao = new GenericDao<Produto>(em);
+        dao.update(p);
+    }
+
+    @Override
     public Produto getProduto(Produto p) {
         GenericDao<Produto> dao = new GenericDao<Produto>(em);
         return dao.findById(Produto.class, p.getCodigo());
@@ -56,5 +62,12 @@ public class ProdutoService implements IProdutoService{
         GenericDao<Categoria> dao = new GenericDao<Categoria>(em);
         return dao.findAll(Categoria.class);
     }
+
+    @Override
+    public List<Produto> pesquisaProduto(String pesquisa, String coluna) {
+        GenericDao<Produto> dao = new GenericDao<Produto>(em);
+        return dao.findByNome(Produto.class, pesquisa, coluna);
+    }
+    
     
 }
