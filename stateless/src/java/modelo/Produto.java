@@ -7,6 +7,7 @@ package modelo;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -18,25 +19,30 @@ import javax.persistence.ManyToOne;
 public class Produto implements Serializable{
     private static final long serialVersion = 1L;
     @Id
-    private int codigo;
+    @GeneratedValue
+    private long codigo;
     private String nome;
     private double valor;
 //MANY TO ONE 
     @ManyToOne
     private Categoria categoria;
 
+    public Produto() {
+    }
 
+
+    
     public Produto(int codigo, String nome, double valor) {
         this.codigo = codigo;
         this.nome = nome;
         this.valor = valor;
     }
 
-    public int getCodigo() {
+    public long getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(long codigo) {
         this.codigo = codigo;
     }
 
