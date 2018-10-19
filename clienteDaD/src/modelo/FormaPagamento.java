@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,31 +6,28 @@
  */
 package modelo;
 
-import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-
 /**
  *
  * @author Suporte
  */
-@Entity
-public class Categoria implements Serializable{
-    
-    private static final long serialVersion = 1L;
-    
-    @Id
+public class FormaPagamento {
     private long id;
     private String descricao;
-    private double percentual;
+    private long parcela;
 
-    public Categoria() {
+    
+    public FormaPagamento() {
     }
 
-    public Categoria(String descricao, double percentual) {
+    public FormaPagamento(long id, String descricao, long parcela) {
+        this.id = id;
         this.descricao = descricao;
-        this.percentual = percentual;
+        this.parcela = parcela;
+    }
+
+    public FormaPagamento(String descricao, long parcela) {
+        this.descricao = descricao;
+        this.parcela = parcela;
     }
 
     public long getId() {
@@ -48,12 +46,12 @@ public class Categoria implements Serializable{
         this.descricao = descricao;
     }
 
-    public double getPercentual() {
-        return percentual;
+    public long getParcela() {
+        return parcela;
     }
 
-    public void setPercentual(double percentual) {
-        this.percentual = percentual;
+    public void setParcela(long parcela) {
+        this.parcela = parcela;
     }
     
     

@@ -6,6 +6,7 @@
 package ejb;
 
 import dao.GenericDao;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;

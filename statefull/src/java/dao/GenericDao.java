@@ -10,6 +10,7 @@ package dao;
  * @author Suporte
  */
 
+import java.util.List;
 import javax.persistence.EntityManager;
 public class GenericDao <T> {
     
@@ -59,5 +60,10 @@ public class GenericDao <T> {
         System.out.println("bucando por id.." + obj.getName());
         return entityManager.find(obj, id);
     }
+    
+    public List<T> findAll(Class<T> obj){
+        return entityManager.createQuery("Select t from " + obj.getSimpleName() + " t").getResultList();
+    }
+    
     
 }

@@ -12,7 +12,6 @@ package dao;
 
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 public class GenericDao <T> {
     
     private EntityManager entityManager;
@@ -63,10 +62,7 @@ public class GenericDao <T> {
     }
     
     public List<T> findAll(Class<T> obj){
-        System.out.println("bucando por id.." + obj.getName());
-        Query query = entityManager.createQuery("SELECT c FROM "+obj.getName()+" as c");
-        
-        return query.getResultList();
+        return entityManager.createQuery("Select t from " + obj.getSimpleName() + " t").getResultList();
     }
     
     

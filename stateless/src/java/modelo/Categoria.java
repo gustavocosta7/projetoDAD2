@@ -5,6 +5,7 @@
  */
 package modelo;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -14,7 +15,10 @@ import javax.persistence.Id;
  * @author Suporte
  */
 @Entity
-public class Categoria {
+public class Categoria implements Serializable{
+    
+    private static final long serialVersion = 1L;
+    
     @Id
     private long id;
     private String descricao;
